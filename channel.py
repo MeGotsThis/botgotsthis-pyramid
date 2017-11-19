@@ -63,7 +63,7 @@ async def commandTacoPyramid(args: ChatCommandArgs) -> bool:
 
 @permission_feature(('broadcaster', None), ('moderator', 'modpyramid'))
 @min_args(2)
-def commandTacoPyramidLong(args: ChatCommandArgs) -> bool:
+async def commandTacoPyramidLong(args: ChatCommandArgs) -> bool:
     count: int = 3 if args.permissions.broadcaster else 2
     with suppress(ValueError, IndexError):
         count = int(args.message.command.split('tacopyramid-')[1])
@@ -73,7 +73,7 @@ def commandTacoPyramidLong(args: ChatCommandArgs) -> bool:
 
 @permission_feature(('broadcaster', None), ('moderator', 'modpyramid'))
 @min_args(2)
-def commandGivePyramid(args: ChatCommandArgs) -> bool:
+async def commandGivePyramid(args: ChatCommandArgs) -> bool:
     count: int = 3 if args.permissions.broadcaster else 2
     # If below generate a ValueError or IndexError,
     # only the above line gets used
@@ -84,7 +84,7 @@ def commandGivePyramid(args: ChatCommandArgs) -> bool:
 
 @permission_feature(('broadcaster', None), ('moderator', 'modpyramid'))
 @min_args(2)
-def commandGivePyramidLong(args: ChatCommandArgs) -> bool:
+async def commandGivePyramidLong(args: ChatCommandArgs) -> bool:
     count: int = 3 if args.permissions.broadcaster else 2
     with suppress(ValueError, IndexError):
         count = int(args.message.command.split('givepyramid-')[1])
@@ -94,7 +94,7 @@ def commandGivePyramidLong(args: ChatCommandArgs) -> bool:
 
 @permission_feature(('broadcaster', None), ('moderator', 'modpyramid'))
 @min_args(2)
-def commandTakePyramid(args: ChatCommandArgs) -> bool:
+async def commandTakePyramid(args: ChatCommandArgs) -> bool:
     count: int = 3 if args.permissions.broadcaster else 2
     # If below generate a ValueError or IndexError,
     # only the above line gets used
@@ -105,7 +105,7 @@ def commandTakePyramid(args: ChatCommandArgs) -> bool:
 
 @permission_feature(('broadcaster', None), ('moderator', 'modpyramid'))
 @min_args(2)
-def commandTakePyramidLong(args: ChatCommandArgs) -> bool:
+async def commandTakePyramidLong(args: ChatCommandArgs) -> bool:
     count: int = 3 if args.permissions.broadcaster else 2
     with suppress(ValueError, IndexError):
         count = int(args.message.command.split('takepyramid-')[1])
